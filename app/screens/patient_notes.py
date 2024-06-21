@@ -22,5 +22,5 @@ def patient_notes():
             st.write("Nota do Paciente adicionada com sucesso!")
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     patient_notes()
