@@ -24,5 +24,5 @@ def symptoms_diagnoses():
             st.write("Sintoma/Diagnóstico adicionado com sucesso!")
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     symptoms_diagnoses()

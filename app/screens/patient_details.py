@@ -23,5 +23,5 @@ def patient_details():
     st.write("Email: johndoe@example.com")
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     patient_details()

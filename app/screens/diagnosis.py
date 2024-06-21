@@ -2,19 +2,22 @@ import streamlit as st
 
 
 def diagnosis():
-    st.title("Diagnóstico")
+    st.header("Diagnóstico")
 
-    # Input fields for diagnosis
     patient_id = st.text_input("ID do Paciente")
-    diagnosis = st.text_area("Diagnóstico")
-    diagnostic_criteria = st.text_area("Critérios Diagnósticos")
-    conclusion = st.text_area("Conclusão")
-    doctor_notes = st.text_area("Observações do Médico (opcional)")
+    if st.button("Buscar"):
+        # Simular a busca do diagnóstico
+        st.write(f"Buscando diagnóstico para o paciente ID: {patient_id}")
+        # Simular dados do diagnóstico
+        diagnosis_info = {
+            "Transtorno": "Transtorno de Ansiedade",
+            "Critérios Diagnósticos": "Sintomas presentes por mais de 6 meses...",
+            "Conclusão": "Paciente apresenta transtorno de ansiedade."
+        }
+        st.write(diagnosis_info)
 
-    if st.button("Salvar Diagnóstico"):
-        st.success("Diagnóstico salvo com sucesso!")
-        # Save diagnosis logic here
+    st.write("Input: ID do Paciente")
+    st.write("Output: Informações de diagnóstico exibidas")
 
-
-if __name__ == "__main__":
-    diagnosis()
+    if __name__ == "__main__":
+    main()
