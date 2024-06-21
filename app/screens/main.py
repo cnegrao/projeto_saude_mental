@@ -1,53 +1,31 @@
 import streamlit as st
-from patient_entry import patient_entry
-from diagnosis import diagnosis
-from treatment import treatment
-from recommendation import recommendation
-from symptoms import symptoms
-from labs import labs
-from allergies import allergies
-from family_history import family_history
-from patient_notes import patient_notes
-from appointments import appointments
-from medications import medications
-from insurance import insurance
-from symptoms_diagnoses import symptoms_diagnoses
+from screens import patient_data, symptoms, diagnostic_criteria, recommendation, treatment, appointments, labs, allergies, family_history, insurance, patient_notes, medications
 
+st.sidebar.title("Navegação")
+options = st.sidebar.radio("Ir para", ["Dados do Paciente", "Sintomas", "Critérios Diagnósticos", "Recomendações", "Tratamentos",
+                           "Compromissos", "Exames Laboratoriais", "Alergias", "Histórico Familiar", "Seguro de Saúde", "Notas do Paciente", "Medicamentos"])
 
-def main():
-    st.sidebar.title("Navegação")
-    option = st.sidebar.selectbox("Selecione uma tela:",
-                                  ["Entrada de Dados do Paciente", "Diagnóstico", "Tratamento Recomendado", "Recomendação",
-                                   "Sintomas", "Exames Laboratoriais", "Alergias", "Histórico Familiar",
-                                   "Notas do Paciente", "Compromissos", "Medicamentos", "Seguros", "Sintomas e Diagnósticos"])
-
-    if option == "Entrada de Dados do Paciente":
-        patient_entry()
-    elif option == "Diagnóstico":
-        diagnosis()
-    elif option == "Tratamento Recomendado":
-        treatment()
-    elif option == "Recomendação":
-        recommendation()
-    elif option == "Sintomas":
-        symptoms()
-    elif option == "Exames Laboratoriais":
-        labs()
-    elif option == "Alergias":
-        allergies()
-    elif option == "Histórico Familiar":
-        family_history()
-    elif option == "Notas do Paciente":
-        patient_notes()
-    elif option == "Compromissos":
-        appointments()
-    elif option == "Medicamentos":
-        medications()
-    elif option == "Seguros":
-        insurance()
-    elif option == "Sintomas e Diagnósticos":
-        symptoms_diagnoses()
-
-
-if __name__ == "__main__":
-    main()
+if options == "Dados do Paciente":
+    patient_data.show()
+elif options == "Sintomas":
+    symptoms.show()
+elif options == "Critérios Diagnósticos":
+    diagnostic_criteria.show()
+elif options == "Recomendações":
+    recommendation.show()
+elif options == "Tratamentos":
+    treatment.show()
+elif options == "Compromissos":
+    appointments.show()
+elif options == "Exames Laboratoriais":
+    labs.show()
+elif options == "Alergias":
+    allergies.show()
+elif options == "Histórico Familiar":
+    family_history.show()
+elif options == "Seguro de Saúde":
+    insurance.show()
+elif options == "Notas do Paciente":
+    patient_notes.show()
+elif options == "Medicamentos":
+    medications.show()
