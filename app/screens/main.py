@@ -1,38 +1,52 @@
 import streamlit as st
-from login import login_screen
-from dashboard import main_dashboard
-from manage_patients import manage_patients
-from patient_details import patient_details
-from manage_appointments import manage_appointments
-from symptoms_diagnoses import symptoms_diagnoses
-from manage_treatments import manage_treatments
-from manage_labs import manage_labs
-from manage_allergies import manage_allergies
+from patient_entry import patient_entry
+from diagnosis import diagnosis
+from treatment import treatment
+from recommendation import recommendation
+from symptoms import symptoms
+from labs import labs
+from allergies import allergies
 from family_history import family_history
-from insurance_info import insurance_info
 from patient_notes import patient_notes
-
-PAGES = {
-    "Login": login_screen,
-    "Dashboard": main_dashboard,
-    "Gerenciamento de Pacientes": manage_patients,
-    "Detalhes do Paciente": patient_details,
-    "Consultas": manage_appointments,
-    "Sintomas e Diagnósticos": symptoms_diagnoses,
-    "Tratamentos": manage_treatments,
-    "Exames Laboratoriais": manage_labs,
-    "Alergias": manage_allergies,
-    "Histórico Familiar": family_history,
-    "Informações de Seguro": insurance_info,
-    "Notas do Paciente": patient_notes,
-}
+from appointments import appointments
+from medications import medications
+from insurance import insurance
+from symptoms_diagnoses import symptoms_diagnoses
 
 
 def main():
     st.sidebar.title("Navegação")
-    selection = st.sidebar.radio("Ir para", list(PAGES.keys()))
-    page = PAGES[selection]
-    page()
+    option = st.sidebar.selectbox("Selecione uma tela:",
+                                  ["Entrada de Dados do Paciente", "Diagnóstico", "Tratamento Recomendado", "Recomendação",
+                                   "Sintomas", "Exames Laboratoriais", "Alergias", "Histórico Familiar",
+                                   "Notas do Paciente", "Compromissos", "Medicamentos", "Seguros", "Sintomas e Diagnósticos"])
+
+    if option == "Entrada de Dados do Paciente":
+        patient_entry()
+    elif option == "Diagnóstico":
+        diagnosis()
+    elif option == "Tratamento Recomendado":
+        treatment()
+    elif option == "Recomendação":
+        recommendation()
+    elif option == "Sintomas":
+        symptoms()
+    elif option == "Exames Laboratoriais":
+        labs()
+    elif option == "Alergias":
+        allergies()
+    elif option == "Histórico Familiar":
+        family_history()
+    elif option == "Notas do Paciente":
+        patient_notes()
+    elif option == "Compromissos":
+        appointments()
+    elif option == "Medicamentos":
+        medications()
+    elif option == "Seguros":
+        insurance()
+    elif option == "Sintomas e Diagnósticos":
+        symptoms_diagnoses()
 
 
 if __name__ == "__main__":
