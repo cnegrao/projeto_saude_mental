@@ -18,7 +18,7 @@ print(f"sys.path: {sys.path}")
 
 # Agora tentar importar os módulos após adicionar o caminho base
 try:
-    from screens import patient_entry, diagnosis, recommendation, treatment, patient_notes, labs, manage_allergies, family_history, insurance_info, patient_notes, medications, diagnostic_criteria
+    from screens import patient_entry, symptoms, diagnostic_criteria, recommendation, treatment, appointments, labs, allergies, family_history, insurance_info, patient_notes, medications
     print("Modules imported successfully.")
 except ModuleNotFoundError as e:
     print(f"Error importing modules: {e}")
@@ -46,7 +46,7 @@ def main():
         patient_entry.main()
         show_title = False  # Não mostrar título nas outras páginas
     elif page == "Sintomas":
-        symptoms_diagnoses.main()
+        symptoms.main()
         show_title = False
     elif page == "Critérios Diagnósticos":
         diagnostic_criteria.main()
@@ -58,7 +58,7 @@ def main():
         treatment.main()
         show_title = False
     elif page == "Consultas":
-        manage_allergies.main()
+        appointments.main()
         show_title = False
     elif page == "Exames":
         labs.main()
@@ -95,4 +95,4 @@ def show_main_page():
 
 
 if __name__ == "__main__":
-    home()
+    main()

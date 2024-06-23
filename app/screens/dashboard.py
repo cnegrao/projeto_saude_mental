@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def main_dashboard():
+def main():
     st.title("Dashboard Principal")
 
     # 5W2H
@@ -18,4 +18,4 @@ def main_dashboard():
 
 
 if __name__ == "__main__":
-    main_dashboard()
+    main()

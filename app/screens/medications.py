@@ -1,32 +1,28 @@
 import streamlit as st
 
 
-def medications():
+def main():
+    st.title("Medicações")
+
     # 5W2H
-    st.markdown("### Medications Screen")
-    st.markdown("""
-    **Who:** Medical professionals and administrative staff  
-    **What:** Enter and view details of patient medications  
-    **Where:** In the medications section of the health management application  
-    **When:** During patient check-ins or whenever medication details need to be updated  
-    **Why:** To keep accurate records of patient medications, dosages, side effects, and interactions  
-    **How:** Using a user-friendly interface that allows for quick entry and retrieval of medication data  
-    **How much:** Effort depends on the number of medications being managed and updated  
-    """)
+    st.write("**Quem:** Médicos")
+    st.write("**O quê:** Tela para gerenciar medicações dos pacientes")
+    st.write("**Por quê:** Para adicionar, editar e visualizar medicações prescritas")
+    st.write("**Quando:** Durante consultas e atualizações médicas")
+    st.write("**Onde:** Dentro do sistema de gerenciamento de saúde mental")
+    st.write("**Como:** Preenchimento de um formulário com dados das medicações")
+    st.write("**Quanto:** N/A")
 
-    st.header("Medications Information")
-
-    with st.form("medication_form"):
-        st.text_input("Medication Name", key="medication_name")
-        st.text_input("Dosage", key="dosage")
-        st.text_area("Side Effects", key="side_effects")
-        st.text_area("Interactions", key="interactions")
-        st.text_area("Contraindications", key="contraindications")
-
-        submitted = st.form_submit_button("Save Medication")
-        if submitted:
-            st.write("Medication details saved successfully.")
+    with st.form(key='add_medication'):
+        patient_id = st.text_input("ID do Paciente")
+        medication_name = st.text_input("Nome do Medicamento")
+        dosage = st.text_input("Dosagem")
+        side_effects = st.text_area("Efeitos Colaterais")
+        interactions = st.text_area("Interações")
+        contraindications = st.text_area("Contraindicações")
+        if st.form_submit_button("Adicionar Medicação"):
+            st.write("Medicação adicionada com sucesso!")
 
 
 if __name__ == "__main__":
-    medications()
+    manage_medications()

@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def diagnosis():
+def main():
     st.header("Diagnóstico")
 
     patient_id = st.text_input("ID do Paciente")
@@ -19,5 +19,6 @@ def diagnosis():
     st.write("Input: ID do Paciente")
     st.write("Output: Informações de diagnóstico exibidas")
 
-    if __name__ == "__main__":
+
+if __name__ == "__main__":
     main()

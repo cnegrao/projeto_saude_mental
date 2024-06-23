@@ -1,15 +1,14 @@
 import streamlit as st
 
 
-def family_history():
+def main():
     st.title("Histórico Familiar")
 
     # 5W2H
     st.write("**Quem:** Médicos")
-    st.write("**O quê:** Tela para gerenciamento do histórico familiar")
-    st.write(
-        "**Por quê:** Para adicionar, editar e visualizar histórico familiar dos pacientes")
-    st.write("**Quando:** Sempre que necessário gerenciar histórico familiar")
+    st.write("**O quê:** Tela para gerenciar histórico familiar dos pacientes")
+    st.write("**Por quê:** Para adicionar, editar e visualizar histórico familiar")
+    st.write("**Quando:** Durante consultas e avaliações")
     st.write("**Onde:** Dentro do sistema de gerenciamento de saúde mental")
     st.write(
         "**Como:** Preenchimento de um formulário com dados do histórico familiar")
@@ -25,4 +24,4 @@ def family_history():
 
 
 if __name__ == "__main__":
-    family_history()
+    manage_family_history()

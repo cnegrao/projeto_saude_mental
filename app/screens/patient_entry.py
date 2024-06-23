@@ -1,23 +1,27 @@
 import streamlit as st
 
 
-def patient_entry():
+def main():
     st.title("Entrada de Dados do Paciente")
 
-    # Input fields for patient data
-    patient_name = st.text_input("Nome do Paciente")
-    age = st.number_input("Idade", min_value=0)
-    gender = st.selectbox("Gênero", ["Masculino", "Feminino", "Outro"])
-    symptoms = st.text_area("Sintomas")
-    medical_history = st.text_area("Histórico Médico (opcional)")
-    current_medications = st.text_area("Medicamentos Atuais (opcional)")
-    allergies = st.text_area("Alergias (opcional)")
-    lab_tests = st.text_area("Exames Laboratoriais (opcional)")
+    # 5W2H
+    st.write("**Quem:** Médicos")
+    st.write("**O quê:** Tela para entrada de dados do paciente")
+    st.write("**Por quê:** Para registrar informações iniciais do paciente")
+    st.write("**Quando:** Durante a avaliação inicial do paciente")
+    st.write("**Onde:** Dentro do sistema de gerenciamento de saúde mental")
+    st.write("**Como:** Preenchimento de um formulário com dados do paciente")
+    st.write("**Quanto:** N/A")
 
-    if st.button("Salvar Dados do Paciente"):
-        st.success("Dados do paciente salvos com sucesso!")
-        # Save patient data logic here
+    with st.form(key='patient_entry'):
+        patient_id = st.text_input("ID do Paciente")
+        name = st.text_input("Nome")
+        birth_date = st.date_input("Data de Nascimento")
+        gender = st.selectbox("Gênero", ["Masculino", "Feminino", "Outro"])
+        contact_info = st.text_area("Informações de Contato")
+        if st.form_submit_button("Adicionar Paciente"):
+            st.write("Dados do paciente adicionados com sucesso!")
 
 
 if __name__ == "__main__":
-    patient_entry()
+    main()
