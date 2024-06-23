@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def symptoms_diagnoses():
+def main():
     st.title("Sintomas e Diagnósticos")
 
     # 5W2H
@@ -24,5 +24,5 @@ def symptoms_diagnoses():
             st.write("Sintoma/Diagnóstico adicionado com sucesso!")
 
 
-if __name__ == "_main_":
-    symptoms_diagnoses()
+if __name__ == "__main__":
+    main()

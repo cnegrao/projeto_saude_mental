@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def patient_details():
+def main():
     st.title("Detalhes do Paciente")
 
     # 5W2H
@@ -23,5 +23,5 @@ def patient_details():
     st.write("Email: johndoe@example.com")
 
 
-if __name__ == "_main_":
-    patient_details()
+if __name__ == "__main__":
+    main()

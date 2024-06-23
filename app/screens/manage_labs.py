@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def manage_labs():
+def main():
     st.title("Exames Laboratoriais")
 
     # 5W2H
@@ -25,4 +25,4 @@ def manage_labs():
 
 
 if __name__ == "__main__":
-    manage_labs()
+    main()

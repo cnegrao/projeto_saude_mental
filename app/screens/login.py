@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def login_screen():
+def main():
     st.title("Login")
 
     # 5W2H
@@ -20,4 +20,4 @@ def login_screen():
 
 
 if __name__ == "__main__":
-    login_screen()
+    main()
