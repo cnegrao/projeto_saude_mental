@@ -64,7 +64,7 @@ def main():
         labs.main()
         show_title = False
     elif page == "Alergias":
-        manage_allergies.main()
+        allergies.main()
         show_title = False
     elif page == "Histórico Familiar":
         family_history.main()
